@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="745.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.Controller.ctrlSignUp">
+   <children>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="154.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #D38FA1; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label fx:id="msgSignUp" alignment="CENTER" contentDisplay="CENTER" text="Register">
+               <FlowPane.margin>
+                  <Insets bottom="20.0" top="10.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefWidth="300.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Username" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="SUUsername" promptText="AwesomeScott7x">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Email" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="SUEmail" promptText="user@email.com">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Password">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="SUPassword" promptText="!@#$%^&amp;*">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Age" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="SUAge" promptText="22">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Gender" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="SUGender" prefWidth="150.0" visibleRowCount="4" />
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Country" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="SUCountry" promptText="Canada">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#SignUp" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #213246; -fx-background-radius: 20px;" text="Sign Up" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Hyperlink onAction="#toLogin" text="Go back to Login" textAlignment="CENTER" textFill="#3936ff" underline="true" />
+               </children>
+            </HBox>
+         </children>
+      </FlowPane>
+   </children>
+</AnchorPane>
