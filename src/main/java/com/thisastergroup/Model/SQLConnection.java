@@ -7,7 +7,7 @@ import java.sql.SQLException;
 //Basic SQL connection class to connect to the database
 
 public class SQLConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/UsersDB";
+    private static final String URL = "jdbc:mysql://localhost:3306/users";
     private static final String USER = "root";
     private static final String PASS = "KappaHetaProject$";
     private Connection conn = null;

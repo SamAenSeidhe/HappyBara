@@ -40,6 +40,11 @@ public class User{
         this.country = country;
     }
 
+    @Override
+    public String toString(){
+        return "Username: " + username + " Password: " + password + " Email: " + email + " Gender: " + gender + " Age: " + age + " Country: " + country;
+    }
+
     /**
      * @return String return the username
      */

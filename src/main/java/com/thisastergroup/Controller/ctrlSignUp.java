@@ -1,21 +1,51 @@
 package com.thisastergroup.Controller;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 
-public class ctrlSignUp{
+import com.thisastergroup.Model.User;
+import com.thisastergroup.Model.SQLUserMethods;
+
+public class ctrlSignUp implements Initializable{
    
-    @SuppressWarnings("rawtypes")
-    @FXML private ComboBox SUGender;
+    
+    @FXML
+    private TextField SUUsername;
+    @FXML 
+    private PasswordField SUPassword;
+    @FXML
+    private TextField SUEmail;
+    @FXML
+    private TextField SUAge;
+    @FXML
+    private ComboBox<String> SUGender;
+    @FXML
+    private TextField SUCountry;
+    @FXML
+    private Label msgSignUp;
 
+    private String[] genderOptions = {"Male", "Female", "Enby", "Other"};
+
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {        
+        SUGender.getItems().addAll(genderOptions);
+    }
+    
     /*
      * Creates a new user in the db
      * 
@@ -26,9 +56,24 @@ public class ctrlSignUp{
      * 
      * @see User
      * @see ctrlLogin
+     * @see SQLUserMethods
      */
     public void SignUp(ActionEvent event){
-        System.out.println("SignUp");
+        try{
+            User us = new User(SUUsername.getText(), SUPassword.getText(), SUEmail.getText(), SUGender.getValue().toString(), Integer.parseInt(SUAge.getText()), SUCountry.getText());
+            try{
+                SQLUserMethods usSQL = new SQLUserMethods();
+                usSQL.signUp(us);
+            } catch (Exception e){
+                msgSignUp.setText("Error creating user in the DB: ");
+                System.out.println(e.getMessage());
+            }
+            
+            msgSignUp.setText("User created");
+        } catch (Exception e){
+            msgSignUp.setText("Error creating user");
+            System.out.println(e.getMessage());
+        }
     }
 
     /*
@@ -49,5 +94,7 @@ public class ctrlSignUp{
         stage.setScene(scene);
         stage.show();     
     }
+
+    
     
 }
