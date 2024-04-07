@@ -1,4 +1,4 @@
-package com.thisastergroup.Controller;
+package com.thisastergroup.controller;
 
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
@@ -10,15 +10,18 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-import com.thisastergroup.Model.User;
+/*
+ * Implement the methods for the Login method, it needs to check if the email exists and if the password is correct
+ */
 
-public class ctrlLogin {
+import com.thisastergroup.model.User;
+
+public class CtrlLogin {
     @FXML
 
     /*
      * Handles the login button event
-     * It tries to create an User object with the information used in the UI. If it fails it should show an error message.
-     * If the User object is created it checks if the user exists in the DB.
+     * First checks if the user email exists in the DB.
      * Then it checks if the password is correct.
      * Lastly it logs in the user and shows the main window.
      * 
@@ -38,7 +41,7 @@ public class ctrlLogin {
         Parent root;
         Scene scene;
 
-        root = FXMLLoader.load(getClass().getResource("..//View//SignUp.fxml"));
+        root = FXMLLoader.load(getClass().getResource("..//view//SignUp.fxml"));
         scene = new Scene(root, 640, 480);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

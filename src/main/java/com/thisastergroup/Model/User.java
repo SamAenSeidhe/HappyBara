@@ -1,4 +1,4 @@
-package com.thisastergroup.Model;
+package com.thisastergroup.model;
 
 //User class to store user information
 //This class is used to create a user object with the information of the user that will be handled in the DB

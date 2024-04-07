@@ -1,4 +1,4 @@
-package com.thisastergroup.Model;
+package com.thisastergroup.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

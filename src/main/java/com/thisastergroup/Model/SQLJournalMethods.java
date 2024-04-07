@@ -1,4 +1,4 @@
-package com.thisastergroup.Model;
+package com.thisastergroup.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -78,11 +78,11 @@ public class SQLJournalMethods extends SQLConnection{
     }
 
     // Method to delete a journal entry
-    public void DeleteEntry(String journalEntry){
+    public void DeleteEntry(String username){
         try{
             String query = "DELETE FROM Journal WHERE username = ?";
             ps = conn.prepareStatement(query);
-            ps.setString(1, journalEntry);
+            ps.setString(1, username);
             ps.executeUpdate();
         }catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());

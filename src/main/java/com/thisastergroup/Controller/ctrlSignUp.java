@@ -1,8 +1,11 @@
-package com.thisastergroup.Controller;
+package com.thisastergroup.controller;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.thisastergroup.model.SQLUserMethods;
+import com.thisastergroup.model.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,10 +20,12 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 
-import com.thisastergroup.Model.User;
-import com.thisastergroup.Model.SQLUserMethods;
+/*
+ * Implement the methods for the SignUp method, it needs to verify the password and check if the user exists (email, username)
+ * 
+ */
 
-public class ctrlSignUp implements Initializable{
+public class CtrlSignUp implements Initializable{
    
     
     @FXML
@@ -88,13 +93,11 @@ public class ctrlSignUp implements Initializable{
         Parent root;
         Scene scene;
 
-        root = FXMLLoader.load(getClass().getResource("..//View//Login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("..//view//Login.fxml"));
         scene = new Scene(root, 500, 480);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();     
     }
 
-    
-    
 }

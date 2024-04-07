@@ -1,4 +1,4 @@
-package com.thisastergroup.Model;
+package com.thisastergroup.model;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -70,8 +70,7 @@ public class SQLUserMethods extends SQLConnection{
 		}
     }
 
-    // Methods to check if the user exists in the DB
-    
+    // Methods to check if the user exists in the DB    
     public boolean userExists(String email) {
         try {
             String query = "SELECT * FROM Users WHERE email = ?";
@@ -114,7 +113,6 @@ public class SQLUserMethods extends SQLConnection{
     }
 
     //Method to get the user information from the DB (LOGIN)
-
     public User getUser(String email, String password) {
         try {
             String query = "SELECT * FROM Users WHERE username = ? AND email = ? AND password = ? AND age = ? AND Gender = ? AND Country = ?";

@@ -1,4 +1,4 @@
-package com.thisastergroup.Controller;
+package com.thisastergroup.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +21,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("..//View//SignUp.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("..//view//SignUp.fxml"));        
         scene = new Scene(root, 640, 480);
         scene.setFill(Color.TRANSPARENT); //Added for rounded corners
         stage.setScene(scene);
