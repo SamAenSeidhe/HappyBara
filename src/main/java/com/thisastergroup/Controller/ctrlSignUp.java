@@ -42,6 +42,8 @@ public class CtrlSignUp implements Initializable{
     private TextField SUCountry;
     @FXML
     private Label msgSignUp;
+    
+    
 
     private String[] genderOptions = {"Male", "Female", "Enby", "Other"};
 
@@ -49,6 +51,7 @@ public class CtrlSignUp implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {        
         SUGender.getItems().addAll(genderOptions);
+        
     }
     
     /*
@@ -74,12 +77,13 @@ public class CtrlSignUp implements Initializable{
                 System.out.println(e.getMessage());
             }
             
-            msgSignUp.setText("User created");
+            msgSignUp.setText("User created");            
         } catch (Exception e){
             msgSignUp.setText("Error creating user");
             System.out.println(e.getMessage());
         }
     }
+    
 
     /*
      * Handles the go back to login hyperlink event
