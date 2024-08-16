@@ -82,7 +82,7 @@ public class CtrlLogin {
         Parent root;
         Scene scene;
 
-        root = FXMLLoader.load(getClass().getResource("..//view//MainScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("..//view//Room.fxml"));
         scene = new Scene(root, 640, 480);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

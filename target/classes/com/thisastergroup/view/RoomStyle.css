@@ -1,0 +1,19 @@
+.button{
+    -fx-background-color: #3a20ac;
+    -fx-shape: "M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0";
+    
+}
+
+.button:hover{
+    -fx-background-color: #6552b9;
+    
+}
+
+.toggle-button{
+    -fx-background-color: #3a20ac;
+    -fx-shape: "M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0";
+}
+
+.toggle-button:hover{
+    -fx-background-color: #6552b9;
+}

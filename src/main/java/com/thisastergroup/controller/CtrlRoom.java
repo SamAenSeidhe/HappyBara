@@ -13,7 +13,7 @@ import javafx.fxml.FXML;
 
 public class CtrlRoom {
     @FXML
-    private Button btnIndicator;
+    private ImageView imgIndicator;
     @FXML
     private Button btnHygiene;
     @FXML
@@ -31,7 +31,7 @@ public class CtrlRoom {
     @FXML
     private ImageView imgChiguiro;
     
-    ImageView imageView = new ImageView(getClass().getResource("../../../alert.png").toExternalForm());    
+    //ImageView imageView = new ImageView(getClass().getResource("../../../alert.png").toExternalForm());    
     
     private Image chiguiFrame = new Image("file:src/main/resources/Idle.gif");
 
@@ -47,15 +47,15 @@ public class CtrlRoom {
          * 
          */
         imgChiguiro.setImage(chiguiFrame);        
-        imageView.setFitHeight(50);
-        imageView.setFitWidth(50);
-        btnIndicator.setGraphic(imageView);
+        //imageView.setFitHeight(50);
+        //imageView.setFitWidth(50);
+        //imgIndicator.setGraphic(imageView);
 
         hbIndicators.hoverProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 ShowStatus();
 
-                btnIndicator.setOpacity(0);
+                imgIndicator.setOpacity(0);
                 btnFood.setDisable(false);
                 btnFood.setOpacity(1);
                 btnSleep.setDisable(false);
@@ -65,7 +65,7 @@ public class CtrlRoom {
                 
             }
             else{
-                btnIndicator.setOpacity(1);
+                imgIndicator.setOpacity(1);
                 btnFood.setDisable(true);
                 btnFood.setOpacity(0);
                 btnSleep.setDisable(true);
@@ -99,15 +99,16 @@ public class CtrlRoom {
      * stored in the database related to the specific user
      * 
      */
-    public void OpenJournal() {
-        System.out.println("Journal is selected");
+    public void OpenJournal() {        
         if (tbJournal.isSelected()){            
             tbDump.setDisable(false);
             tbDump.setOpacity(1);
+            System.out.println("Journal is selected");
         }
         else {            
             tbDump.setDisable(true);
             tbDump.setOpacity(0);
+            
         }
     }
 
