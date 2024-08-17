@@ -30,26 +30,28 @@ public class CtrlRoom {
     private AnchorPane apButtons;
     @FXML
     private ImageView imgChiguiro;
-    
-    //ImageView imageView = new ImageView(getClass().getResource("../../../alert.png").toExternalForm());    
-    
+
+    // ImageView imageView = new
+    // ImageView(getClass().getResource("../../../alert.png").toExternalForm());
+
     private Image chiguiFrame = new Image("file:src/main/resources/Idle.gif");
 
     private float indicator;
     private float hygiene;
     private float sleep;
     private float food;
-    
-    public void initialize(){              
+
+    public void initialize() {
 
         /*
-         * The following function sets an specific animation for the pet depending on the indicators 
+         * The following function sets an specific animation for the pet depending on
+         * the indicators
          * 
          */
-        imgChiguiro.setImage(chiguiFrame);        
-        //imageView.setFitHeight(50);
-        //imageView.setFitWidth(50);
-        //imgIndicator.setGraphic(imageView);
+        imgChiguiro.setImage(chiguiFrame);
+        // imageView.setFitHeight(50);
+        // imageView.setFitWidth(50);
+        // imgIndicator.setGraphic(imageView);
 
         hbIndicators.hoverProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
@@ -61,10 +63,9 @@ public class CtrlRoom {
                 btnSleep.setDisable(false);
                 btnSleep.setOpacity(1);
                 btnHygiene.setDisable(false);
-                btnHygiene.setOpacity(1);                            
-                
-            }
-            else{
+                btnHygiene.setOpacity(1);
+
+            } else {
                 imgIndicator.setOpacity(1);
                 btnFood.setDisable(true);
                 btnFood.setOpacity(0);
@@ -79,7 +80,7 @@ public class CtrlRoom {
     /*
      * Calculates the average of the three indicators (Sleep, Food, Hygiene)
      * 
-     * Takes values based on the information provided and time since last update 
+     * Takes values based on the information provided and time since last update
      * on each indicator to calculate the average value percentage of them and
      * /provide a visual feedback to the user
      * 
@@ -92,23 +93,22 @@ public class CtrlRoom {
     }
 
     /*
-     * Shows the journal tab and enables the dump toggler 
+     * Shows the journal tab and enables the dump toggler
      * 
-     * When the journal tab is selected, the dump toggler is enabled and 
+     * When the journal tab is selected, the dump toggler is enabled and
      * the scene for the journal entries is shown to the user from the data
      * stored in the database related to the specific user
      * 
      */
-    public void OpenJournal() {        
-        if (tbJournal.isSelected()){            
+    public void OpenJournal() {
+        if (tbJournal.isSelected()) {
             tbDump.setDisable(false);
             tbDump.setOpacity(1);
             System.out.println("Journal is selected");
-        }
-        else {            
+        } else {
             tbDump.setDisable(true);
             tbDump.setOpacity(0);
-            
+
         }
     }
 
@@ -120,17 +120,15 @@ public class CtrlRoom {
      * 
      */
     public void ToggleDump() {
-        if(tbDump.isSelected()){
+        if (tbDump.isSelected()) {
             System.out.println("Dump is selected");
-        }
-        else{
+        } else {
             System.out.println("Dump is not selected");
-        }        
+        }
     }
 
-    protected void refreshIndicator(){
+    protected void refreshIndicator() {
         indicator = (hygiene + sleep + food) / 3;
     }
 
-  
 }

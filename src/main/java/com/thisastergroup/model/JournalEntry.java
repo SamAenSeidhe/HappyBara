@@ -18,7 +18,7 @@ public class JournalEntry {
     private String journalEntry;
     private String type;
     private String date;
-
+    
     /**
      * Constructor for JournalEntry
      * 
