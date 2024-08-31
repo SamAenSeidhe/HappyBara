@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class SQLJournalMethods extends SQLConnection{
     PreparedStatement ps = null;
@@ -32,12 +33,13 @@ public class SQLJournalMethods extends SQLConnection{
     }
 
     //Method to retrieve all journal entries from a user by date (requires the username)
-    public JournalEntry GetJournal(JournalEntry je){
+    public JournalEntry GetJournal(JournalEntry je, int id){
         try{
-            String query = "SELECT * FROM Journal WHERE username = ? AND Date = ?";
+            String query = "SELECT * FROM Journal WHERE username = ?, idjournal > ?, AND Date = ?";
             ps = conn.prepareStatement(query);
             ps.setString(1, je.getUsername());
-            ps.setString(2, je.getDate());
+            ps.setInt(2, id);
+            ps.setString(3, je.getDate());
             rs = ps.executeQuery();
             if(rs.next()){
                 return new JournalEntry(rs.getString("Username"), rs.getString("Entry"), rs.getString("Type"), rs.getString("Date"));                   

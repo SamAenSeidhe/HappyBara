@@ -1,0 +1,111 @@
+/* Scroll pane and bars styling */
+.scroll-pane {
+    -fx-background-color: #8077b1;
+    -fx-background-radius: 10;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 16.5;
+    -fx-padding: 0 2 0 7;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #2b2b2b;
+}
+
+.scroll-bar .increment-button .increment-arrow,
+.scroll-bar .decrement-button .decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+
+/* Flow Pane, Cards and separators of the shop*/
+
+.flowpane {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-background-color: transparent;
+}
+
+.item-card {
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.item-card:hover {
+    -fx-background-color: #962f2f;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    
+}
+
+.intro-banner-card {
+    -fx-background-color: #585858;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.intro-banner-card:hover {    
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.promo-card {
+    -fx-background-color: #7cdda4;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.promo-card:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.button-shopcart {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-size: 15;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.button-shopcart:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+
+.separator .line {
+    -fx-background-color: #424242;
+    -fx-pref-height: 1;
+    -fx-border-color: transparent;
+}
+
+
+/* Labels and other text */
+
+.label{
+    -fx-font-size: 15;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-text-fill: #000000;     
+}
+
+.title-label {
+    -fx-font-size: 25;
+    -fx-font-family: "Bell MT";    
+    -fx-text-fill: #fff;
+    -fx-rotate: 0;
+}
+

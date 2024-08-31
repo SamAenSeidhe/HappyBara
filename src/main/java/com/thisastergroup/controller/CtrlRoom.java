@@ -6,9 +6,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.transform.Translate;
-import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 
 public class CtrlRoom {
@@ -43,7 +40,7 @@ public class CtrlRoom {
 
     public void initialize() {
 
-        /*
+        /**
          * The following function sets an specific animation for the pet depending on
          * the indicators
          * 
@@ -77,7 +74,7 @@ public class CtrlRoom {
         });
     }
 
-    /*
+    /**
      * Calculates the average of the three indicators (Sleep, Food, Hygiene)
      * 
      * Takes values based on the information provided and time since last update
@@ -92,7 +89,7 @@ public class CtrlRoom {
 
     }
 
-    /*
+    /**
      * Shows the journal tab and enables the dump toggler
      * 
      * When the journal tab is selected, the dump toggler is enabled and
@@ -112,7 +109,7 @@ public class CtrlRoom {
         }
     }
 
-    /*
+    /**
      * Toggles the dump lines within the journal entries
      * 
      * Shows or hides the dump lines within the journal entries based on the

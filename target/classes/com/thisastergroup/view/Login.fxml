@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="551.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlLogin">
    <children>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="154.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #D38FA1; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <FlowPane fx:id="fpLogin" alignment="CENTER" columnHalignment="CENTER" layoutX="154.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #D38FA1; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
             <Label fx:id="msgLogin" alignment="CENTER" contentDisplay="CENTER" text="Welcome">
                <FlowPane.margin>
@@ -68,7 +68,7 @@
             </HBox>
             <HBox alignment="CENTER" prefWidth="250.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#Login" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #213246; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#Login" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #213246; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
                      <HBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </HBox.margin>

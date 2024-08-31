@@ -1,0 +1,62 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-controls/21.0.2/javafx-controls-21.0.2.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-controls/21.0.2/javafx-controls-21.0.2-win.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-graphics/21.0.2/javafx-graphics-21.0.2.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-graphics/21.0.2/javafx-graphics-21.0.2-win.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-base/21.0.2/javafx-base-21.0.2.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-base/21.0.2/javafx-base-21.0.2-win.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-fxml/21.0.2/javafx-fxml-21.0.2.jar;C:/Users/OFIMATICA-22/.m2/repository/org/openjfx/javafx-fxml/21.0.2/javafx-fxml-21.0.2-win.jar;C:/Users/OFIMATICA-22/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar;C:/Users/OFIMATICA-22/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'D:/Sam(D)/Programacion/POO-2024/happybara/happybara/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Sam(D)/Programacion/POO-2024/happybara/happybara/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'happybara 0.1-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'D:/Sam(D)/Programacion/POO-2024/happybara/happybara/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'happybara 0.1-SNAPSHOT API'
+com.thisastergroup.controller
+com.thisastergroup.model
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2.jar = 1705439751000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2-win.jar = 1705439753000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2.jar = 1705439767000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2-win.jar = 1705439773000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2.jar = 1705439743000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2-win.jar = 1705439746000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2.jar = 1705439759000
+C:\Users\OFIMATICA-22\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2-win.jar = 1705439765000
+C:\Users\OFIMATICA-22\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar = 1681683093000
+C:\Users\OFIMATICA-22\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar = 1666818740000
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\src\main\java = 1723671586326
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\allclasses-index.html = 1724450281885
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\allpackages-index.html = 1724450281890
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\copy.svg = 1724450281958
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\element-list = 1724450281757
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\help-doc.html = 1724450281949
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\index-all.html = 1724450281932
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\index.html = 1724450281863
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\member-search-index.js = 1724450281910
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\module-search-index.js = 1724450281893
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\overview-summary.html = 1724450281938
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\overview-tree.html = 1724450281857
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\package-search-index.js = 1724450281895
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\script.js = 1724450281956
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\search-page.js = 1724450281965
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\search.html = 1724450281936
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\search.js = 1724450281962
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\stylesheet.css = 1724450281953
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\tag-search-index.js = 1724450281911
+D:\Sam(D)\Programacion\POO-2024\happybara\happybara\target\apidocs\type-search-index.js = 1724450281908

@@ -46,9 +46,10 @@ public class CtrlJournal {
     private Image img = new Image("file:src/main/resources/Icon.png");
 
     public void initialize() {
+        this.date = "today";
 
         // Gets the user logged in and the current date to filter the DB
-        getEntriesFromDB();
+        getEntriesFromDB(this.date);
 
         // Read the DB and create the journal entries elements in the scene
         loadEntries();
@@ -68,11 +69,11 @@ public class CtrlJournal {
         icoNewEntry.setImage(img);
     }
 
-    /*
+    /**
      * Function to load the journal entries from the JournalEntry object to the GUI
      * 
      * It loads the entries from the object created and it adds them to the scene
-     * creating Text elements in the VBox assigned *
+     * creating Text elements in the VBox assigned
      * 
      * @see com.thisastergroup.model.JournalEntry
      */
@@ -116,15 +117,16 @@ public class CtrlJournal {
      * It reads the entries from the database filtered by the user name and the date
      * it was created.
      */
-    public void getEntriesFromDB() {
+    public void getEntriesFromDB(String date) {
         // TODO read the DB, in the meantime this is the mockup
+
         this.date = "2024-06-01";
         this.user = "User";
         this.type = "Manual";
         this.journalEntry = "To be or not to be that is the question. Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles and by opposing end them.";
     }
 
-    /*
+    /**
      * Function to wrap the journal entries
      * 
      * It wraps the journal entries to the width of the scene to avoid overflow
@@ -136,7 +138,7 @@ public class CtrlJournal {
         }
     }
 
-    /*
+    /**
      * Function to enable the write entry
      * 
      * It creates a text field to write a new journal entry
@@ -156,7 +158,7 @@ public class CtrlJournal {
         vbEntries.getChildren().add(btnNewEntry);
     }
 
-    /*
+    /**
      * Function to write a new journal entry
      * 
      * It creates a new journal entry in the database and adds it to the scene as a
@@ -175,9 +177,10 @@ public class CtrlJournal {
             return;
         }
 
-        jEntry = new JournalEntry(this.user, this.txtFieldEntry.getText(), "Dump", this.date);
+        jEntry = new JournalEntry(this.user, this.txtFieldEntry.getText(), "Manual", this.date);
         // TODO Send new entry to the DB (jEntrty) also an if statement in case the
         // entry is empty
+
         Text txtEntry = new Text();
         txtEntry.setLineSpacing(5);
         // txtEntry.setStyle("-fx-font-size: 20px; -fx-fill: #000000;");
@@ -189,7 +192,7 @@ public class CtrlJournal {
         moveButtons();
     }
 
-    /*
+    /**
      * Function to move all buttons to the end of the VBox
      * 
      * @see Journal.fxml
