@@ -1,0 +1,37 @@
+<categories>
+    <category name="eating">
+        <question name="01-E">
+            <text>Did you eat already ate something today?</text>
+            <tip>A healthy, well-balanced diet can help us think clearly and feel more alert. It can
+                also improve concentration and attention span.</tip>
+        </question>
+        <question name="02-E">
+            <text>Wanna join me for a water break? In the mean time, I was wondering what's your
+                favorite Beverage?</text>
+            <tip>Great! Mine is coffee :3 Did you know it was banned during the 18th century since
+                governments thought it stimulated radical thinking?</tip>
+        </question>
+    </category>
+
+    <category name="sleeping">
+        <question name="01-S">
+            <text>Did you get enough sleep last night?</text>
+            <tip>Getting enough sleep is important for your health and well-being. It can help you
+                feel more alert and focused during the day.</tip>
+        </question>
+        <question name="02-S">
+            <text>What did you do last night before going to bed?</text>
+            <tip>If you are having trouble falling asleep, consider warming up your feet and hands.
+                Interestingly, your body often takes care of this on its own through a process known
+                as distal vasodilation.</tip>
+        </question>
+    </category>
+
+    <category name="hygene">
+        <question name="01-H">
+            <text>Did you brush your teeth today?</text>
+            <tip>Good oral hygiene is important for your overall health. It can help prevent tooth
+                decay, gum disease, and bad breath.</tip>
+        </question>
+    </category>
+</categories>

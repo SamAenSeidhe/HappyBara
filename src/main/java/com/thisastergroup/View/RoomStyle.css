@@ -1,0 +1,46 @@
+.bodybg {
+    -fx-background-image: url("file:src/main/resources/Room.jpg");
+    -fx-background-size: 100% 100%;
+}
+.gardenbg {
+    -fx-background-image: url("file:src/main/resources/garden.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.button{
+    -fx-background-color: #3a20ac;
+}
+
+.sleepbutton {
+    -fx-background-image: url("file:src/main/resources/Bed-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.feedbutton {
+    -fx-background-image: url("file:src/main/resources/Feed-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.cleanbutton {
+    -fx-background-image: url("file:src/main/resources/Shower-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.journalbutton {
+    -fx-background-image: url("file:src/main/resources/Journal-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.button:hover{
+    -fx-background-color: #6552b9;
+}
+
+.toggle-button{
+    -fx-background-color: #3a20ac;
+    -fx-shape: "M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0";
+}
+
+.toggle-button:hover{
+    -fx-background-color: #6552b9;
+}

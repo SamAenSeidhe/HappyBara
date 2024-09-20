@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.thisastergroup.model.SQLUserMethods;
-import com.thisastergroup.model.User;
+import org.mindrot.jbcrypt.BCrypt;
+
+import com.thisastergroup.Model.SQLUserMethods;
+import com.thisastergroup.Model.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +16,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.control.PasswordField;
 
 /*
@@ -25,74 +29,126 @@ import javafx.scene.control.PasswordField;
  * 
  */
 
-public class CtrlSignUp implements Initializable{
-   
-    
+public class CtrlSignUp implements Initializable {
+
     @FXML
-    private TextField SUUsername;
-    @FXML 
-    private PasswordField SUPassword;
+    private TextField txtfUsername;
     @FXML
-    private TextField SUEmail;
+    private PasswordField txtfPassword;
     @FXML
-    private TextField SUAge;
+    private TextField txtfEmail;
     @FXML
-    private ComboBox<String> SUGender;
+    private ChoiceBox<Integer> cbAge;
     @FXML
-    private TextField SUCountry;
+    private ComboBox<String> cbGender;
+    @FXML
+    private TextField txtfCountry;
     @FXML
     private Label msgSignUp;
-    
-    
+    @FXML
+    private FlowPane fpRegistration;
 
-    private String[] genderOptions = {"Male", "Female", "Enby", "Other"};
+    private Label lblMessage = new Label("");
 
+    private String[] genderOptions = { "Male", "Female", "Enby", "Other" };
+
+    private Integer[] ageOptions = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+            24, 25, 26, 27, 28, 29, 30, 31, 32,
+            33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
+            60, 61, 62, 63, 64, 65, 66, 67, 68,
+            69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95,
+            96, 97, 98, 99, 100 };
 
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {        
-        SUGender.getItems().addAll(genderOptions);
-        
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        cbGender.getItems().addAll(genderOptions);
+        cbAge.getItems().addAll(ageOptions);
     }
-    
-    /*
+
+    /**
      * Creates a new user in the db
      * 
-     * It tries to create an User object with the information used in the UI. If it fails it should show an error message.
-     * If the User object is created it checks if the username and email already exists in the DB. And also shows a message.
-     * Then it creates the user in the DB with the information provided. 
+     * It tries to create an User object with the information used in the UI.
+     * Once the User object is created it checks if the username and email already
+     * exists in the DB
+     * Then it creates the user in the DB with the information provided.
+     * When any of the above fails, it shows an error message.
      * Lastly it shows the main window or the login window.
      * 
      * @see User
-     * @see ctrlLogin
+     * 
+     * @see CtrlLogin
+     * 
      * @see SQLUserMethods
      */
-    public void SignUp(ActionEvent event){
-        try{
-            User us = new User(SUUsername.getText(), SUPassword.getText(), SUEmail.getText(), SUGender.getValue().toString(), Integer.parseInt(SUAge.getText()), SUCountry.getText());
-            try{
-                SQLUserMethods usSQL = new SQLUserMethods();
-                usSQL.signUp(us);
-            } catch (Exception e){
-                msgSignUp.setText("Error creating user in the DB: ");
+
+    public void SignUp() {
+        // Hash the password using BCrypt
+        String hashedPwd = BCrypt.hashpw(txtfPassword.getText(), BCrypt.gensalt(15));
+
+        try {
+
+            User us = new User(txtfUsername.getText(), hashedPwd, txtfEmail.getText(),
+                    cbGender.getValue(), (cbAge.getValue()), txtfCountry.getText(), 0);
+
+            try {
+                SQLUserMethods db_methods = new SQLUserMethods();
+
+                String emailcito = txtfEmail.getText();
+                String passw = txtfPassword.getText();
+                Boolean mistake = true;
+
+                if (db_methods.userExists(us.getEmail()) || db_methods.usernameExist(us.getUsername())) {
+                    createMsg("User already exists");
+                    txtfEmail.clear();
+                    txtfUsername.clear();
+                } else {
+                    if (!us.checkEmail(emailcito)) {
+                        createMsg("Invalid email address");
+                        txtfEmail.clear();
+                        mistake = false;
+                    } else {
+                        createMsg("");
+                    }
+
+                    if (!us.checkPassword(passw)) {
+                        createMsg(
+                                "The password must meet the requirements: 8 characters, 1 number, 1 uppercase, 1 lowercase, 1 (@#%$^), any space/tap");
+                        txtfPassword.clear();
+                        mistake = false;
+                    } else {
+                        createMsg("");
+                    }
+
+                    if (mistake) {
+                        SQLUserMethods usSQL = new SQLUserMethods();
+                        usSQL.signUp(us);
+                        createMsg("User created successfully!");
+                    }
+
+                }
+
+            } catch (Exception e) {
+                createMsg("Error creating user in the DB: ");
                 System.out.println(e.getMessage());
             }
-            
-            msgSignUp.setText("User created");            
-        } catch (Exception e){
-            msgSignUp.setText("Error creating user");
+
+        } catch (Exception e) {
+            createMsg("Error creating user");
             System.out.println(e.getMessage());
         }
-    }
-    
 
-    /*
+    }
+
+    /**
      * Handles the go back to login hyperlink event
      * It shows the login window
      * 
-     * @see ctrlLogin
+     * @see CtrlLogin
+     * 
      * @throws IOException
      */
-    public void toLogin(ActionEvent event) throws IOException{
+    public void toLogin(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
         Scene scene;
@@ -101,7 +157,28 @@ public class CtrlSignUp implements Initializable{
         scene = new Scene(root, 500, 480);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.show();     
+        stage.show();
+    }
+
+    /**
+     * Creates a message in the UI
+     * 
+     * It creates a label with the message provided and adds it to the end of the
+     * FlowPane
+     * 
+     * Use it for error messages or success messages
+     * 
+     * @param msg
+     * 
+     */
+    private void createMsg(String msg) {
+        fpRegistration.getChildren().remove(lblMessage);
+        lblMessage.setText(msg);        
+        lblMessage.setWrapText(true);
+        lblMessage.setMaxWidth(250);
+        lblMessage.setStyle("-fx-text-fill: white;");
+
+        fpRegistration.getChildren().add(lblMessage);
     }
 
 }

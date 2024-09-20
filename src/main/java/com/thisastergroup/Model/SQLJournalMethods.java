@@ -1,9 +1,10 @@
-package com.thisastergroup.model;
+package com.thisastergroup.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class SQLJournalMethods extends SQLConnection{
     PreparedStatement ps = null;
@@ -13,12 +14,11 @@ public class SQLJournalMethods extends SQLConnection{
     // Method to create a new journal entry
     public void JournalEntry(JournalEntry je){
         try{
-            String query = "INSERT INTO Journal (Username, Entry, Type, Date) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO Journal (Username, Entry, Type) VALUES (?, ?, ?)";
             ps = conn.prepareStatement(query);
             ps.setString(1, je.getUsername());
             ps.setString(2, je.getJournalEntry());
             ps.setString(3, je.getType());
-            ps.setString(4, je.getDate());
             ps.executeUpdate();
         }catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
@@ -32,15 +32,20 @@ public class SQLJournalMethods extends SQLConnection{
     }
 
     //Method to retrieve all journal entries from a user by date (requires the username)
-    public JournalEntry GetJournal(JournalEntry je){
+    public ArrayList<JournalEntry> GetJournal(JournalEntry je){
         try{
-            String query = "SELECT * FROM Journal WHERE username = ? AND Date = ?";
+            String query = "SELECT * FROM Journal WHERE username = ? AND Date(Date) = ?";
             ps = conn.prepareStatement(query);
             ps.setString(1, je.getUsername());
-            ps.setString(2, je.getDate());
+            ps.setString(3, je.getDate());
             rs = ps.executeQuery();
-            if(rs.next()){
-                return new JournalEntry(rs.getString("Username"), rs.getString("Entry"), rs.getString("Type"), rs.getString("Date"));                   
+            ArrayList<JournalEntry> Entries = new ArrayList<JournalEntry>();
+            while (rs.next()){
+                JournalEntry arraylist_entry = new JournalEntry(rs.getString("Username"), rs.getString("Entry"), rs.getString("Type"), rs.getString("Date"));
+                Entries.add(arraylist_entry); 
+            }
+            if (Entries.size() != 0) {
+                return Entries;
             }
             return null;
             

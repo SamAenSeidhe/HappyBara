@@ -1,0 +1,32 @@
+.txtEntry {
+    -fx-font-size: 20px;
+    -fx-fill: rgb(0, 0, 0);
+
+}
+
+.txtEntry:hover {
+    -fx-font-size: 25px;
+    -fx-fill: #3f55d1;
+    -fx-underline: true;
+
+}
+
+.txtEntry-dump {
+    -fx-font-size: 20px;
+    -fx-background-color: #e5decf;
+    -fx-text-fill: white;
+}
+
+.txtEntry-dump:hover {
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
+    -fx-underline: true;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}

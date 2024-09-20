@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlRoom">
+   <children>
+      <AnchorPane fx:id="apButtons" maxWidth="1.7976931348623157E308" prefHeight="646.0" prefWidth="502.0" style="-fx-background-color: transparent;">
+         <children>
+            <ToggleButton fx:id="tbJournal" mnemonicParsing="false" onAction="#OpenJournal" prefHeight="26.0" prefWidth="27.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+            <ToggleButton fx:id="tbDump" disable="true" mnemonicParsing="false" onAction="#ToggleDump" opacity="0.0" prefHeight="26.0" prefWidth="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+            <Button fx:id="btnSleep" alignment="CENTER" disable="true" layoutX="228.0" layoutY="470.4" mnemonicParsing="false" onAction="#sleep" opacity="0.55" prefHeight="40.0" prefWidth="42.0" text="." AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="470.0" />
+            <Button fx:id="btnFood" disable="true" layoutX="296.0" layoutY="460.0" mnemonicParsing="false" onAction="#feed" opacity="0.55" prefHeight="40.0" prefWidth="40.0" text="." AnchorPane.bottomAnchor="32.799999999999955" AnchorPane.rightAnchor="164.8" />
+            <Button fx:id="btnHygiene" disable="true" layoutX="161.0" layoutY="462.0" mnemonicParsing="false" onAction="#clean" opacity="0.55" prefHeight="40.0" prefWidth="40.0" text="." AnchorPane.bottomAnchor="30.799999999999955" AnchorPane.leftAnchor="161.0" />
+            <ImageView fx:id="imgIndicator" fitHeight="41.0" fitWidth="50.0" layoutX="225.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="50.799999999999955" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.8" AnchorPane.topAnchor="441.0" />
+            <ImageView fx:id="imgChiguiro" fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<FlowPane fx:id="scenePane" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: e5decf;" stylesheets="@JournalStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlJournal">
+   <children>
+      <AnchorPane fx:id="apHeader" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <children>
+            <Button fx:id="toRoom" mnemonicParsing="false" onAction="#toRoom" text="Room" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+            <Text fx:id="txtDate" strokeType="OUTSIDE" strokeWidth="0.0" text="04/09/2024" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0" />
+            <Button fx:id="btnCalendar" disable="true" mnemonicParsing="false" onAction="#pickDate" opacity="0.0" text="Calendar" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="16.0" />
+            <DatePicker fx:id="dpCalendar" layoutX="64.0" layoutY="16.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="spEntries" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;">
+         <FlowPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </FlowPane.margin>
+         <content>
+            <VBox fx:id="vbEntries" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" style="-fx-background-color: e5decf;">
+               <children>
+                  <Button fx:id="btnNewEntry" mnemonicParsing="false" onAction="#enableWriteEntry">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fx:id="icoNewEntry" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <HBox>
+                     <children>
+                        <TextField fx:id="txtFieldEntry" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" />
+                        <Button fx:id="btnSend" disable="true" mnemonicParsing="false" onAction="#sendEntry" opacity="0.0" text="Send" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </content>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ScrollPane>
+   </children>
+</FlowPane>

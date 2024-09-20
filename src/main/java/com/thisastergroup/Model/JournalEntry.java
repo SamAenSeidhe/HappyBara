@@ -1,4 +1,4 @@
-package com.thisastergroup.model;
+package com.thisastergroup.Model;
 
 // JournalEntry class to store journal entries
 // This class is used to create a journal entry which consist of 4 data fields: username, journalEntry, type, and date (format YYYY-MM-DD HH:MI:SS)
@@ -17,8 +17,8 @@ public class JournalEntry {
     private String username;
     private String journalEntry;
     private String type;
-    private String date;
-
+    private String date;    
+    
     /**
      * Constructor for JournalEntry
      * 

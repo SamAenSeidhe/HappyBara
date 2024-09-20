@@ -1,7 +1,10 @@
-package com.thisastergroup.model;
+package com.thisastergroup.Model;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -39,56 +42,55 @@ SQLUserMethods implementation and usage
 
 //Methods and other SQL related functions for users Login and SignUp
 
-public class SQLUserMethods extends SQLConnection{
+public class SQLUserMethods extends SQLConnection {
     PreparedStatement ps = null;
     ResultSet rs = null;
     Connection conn = getConnection();
 
-
     // Method to create a new user in the DB
     public void signUp(User us) {
-        try {            
-            String query = "INSERT INTO Users (username, email, password, age, Gender, Country) VALUES (?, ?, ? , ?, ?, ?)";
+        try {
+            String query = "INSERT INTO Users (username, email, password, age, gender, Country) VALUES (?, ?, ? , ?, ?, ?)";
             ps = conn.prepareStatement(query);
             ps.setString(1, us.getUsername());
             ps.setString(2, us.getEmail());
             ps.setString(3, us.getPassword());
             ps.setInt(4, us.getAge());
             ps.setString(5, us.getGender());
-            ps.setString(6, us.getCountry());            
+            ps.setString(6, us.getCountry());
             ps.executeUpdate();
         } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
-        } finally{
-			try 
-			{
-				conn.close();				
-			}catch(SQLException SQLex2)
-			{
-				System.err.println(SQLex2);
-			}
-		}
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
+            }
+        }
     }
 
-    // Methods to check if the user exists in the DB    
+    // Methods to check if the user exists in the DB
     public boolean userExists(String email) {
         try {
-            String query = "SELECT * FROM Users WHERE email = ?";
+            String query = "SELECT username FROM Users WHERE email = ?";
             ps = conn.prepareStatement(query);
             ps.setString(1, email);
             return ps.executeQuery().next();
         } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
+            System.err.println(e.getMessage());
             return false;
-        } finally{
-			try 
-			{
-				conn.close();				
-			}catch(SQLException SQLex2)
-			{
-				System.err.println(SQLex2);
-			}
-		}
+        } /*
+           * finally{
+           * try
+           * {
+           * conn.close();
+           * }catch(SQLException SQLex2)
+           * {
+           * System.err.println(SQLex2);
+           * }
+           * }
+           */
     }
 
     public boolean usernameExist(String username) {
@@ -99,48 +101,52 @@ public class SQLUserMethods extends SQLConnection{
             rs = ps.executeQuery();
             return ps.executeQuery().next();
         } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
+            System.err.println(e.getMessage());
             return false;
-        } finally{
-			try 
-			{
-				conn.close();				
-			}catch(SQLException SQLex2)
-			{
-				System.err.println(SQLex2);
-			}
-		}
+        } /*
+           * finally {
+           * try {
+           * conn.close();
+           * } catch (SQLException SQLex2) {
+           * System.err.println(SQLex2);
+           * }
+           * }
+           */
+
     }
 
-    //Method to get the user information from the DB (LOGIN)
+    // Method to get the user information from the DB (LOGIN)
     public User getUser(String email, String password) {
-        try {
-            String query = "SELECT * FROM Users WHERE username = ? AND email = ? AND password = ? AND age = ? AND Gender = ? AND Country = ?";
-            ps = conn.prepareStatement(query); 
-            ps.setString(1, email);
-            ps.setString(2, password);
-            rs = ps.executeQuery();
+        try {            
+            String query = "SELECT * FROM Users WHERE email = ? ";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);            
+            rs = ps.executeQuery();            
             if (rs.next()) {
-                if(email.equals(rs.getString("email")) && password.equals(rs.getString("password"))){
-                    return new User(rs.getString("username"),  rs.getString("password"), rs.getString("email"), rs.getString("Gender"), rs.getInt("age"), rs.getString("Country"));    
+                System.out.println("Verifying password...");
+                if (email.equals(rs.getString("email")) && BCrypt.checkpw(password, rs.getString("password"))) {
+                    System.out.println("Password verified");
+                    return new User(rs.getString("username"), rs.getString("password"), rs.getString("email"),
+                            rs.getString("Gender"), rs.getInt("age"), rs.getString("Country"), rs.getInt("balance"));
+
                 }
-                return null;                
-            }            
-        } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
-        } finally{
-            try 
-            {
-                conn.close();                
-            }catch(SQLException SQLex2)
-            {
-                System.err.println(SQLex2);
+                System.out.println("Password incorrect");
+
+                return null;
             }
-        }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } /*finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
+            }
+        }*/
         return null;
     }
 
-    //Method to modify or update the user information in the DB
+    // Method to modify or update the user information in the DB
 
     public void updateUser(User us) {
         try {
@@ -155,39 +161,84 @@ public class SQLUserMethods extends SQLConnection{
             ps.setString(7, us.getUsername());
             ps.executeUpdate();
         } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
-        } finally{
-            try 
-            {
-                conn.close();                
-            }catch(SQLException SQLex2)
-            {
-                System.err.println(SQLex2);
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
             }
         }
     }
-            
 
-    //Method to delete the user from the DB
-    public void deleteUser(User us) {        
+    // Method to delete the user from the DB
+    public void deleteUser(User us) {
         try {
-               String query = "DELETE FROM Users WHERE username = ? AND email = ? AND password = ?";
-                ps = conn.prepareStatement(query);
-                ps.setString(1, us.getUsername());
-                ps.setString(2, us.getEmail());
-                ps.setString(3, us.getPassword());
-                ps.executeUpdate();
+            String query = "DELETE FROM Users WHERE username = ? AND email = ? AND password = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, us.getUsername());
+            ps.setString(2, us.getEmail());
+            ps.setString(3, us.getPassword());
+            ps.executeUpdate();
         } catch (SQLException e) {
-            System.err.println("Error: " + e.getMessage());
-        } finally{
-            try 
-            {
-                conn.close();                
-            }catch(SQLException SQLex2)
-            {
-                System.err.println(SQLex2);
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
             }
-        }        
+        }
     }
 
+    public void updateLastTimes(User us) {
+        try {
+            String query = "UPDATE Users SET lasttimes = ?  WHERE username = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, us.getLastTimes());
+            ps.setString(2, us.getUsername());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
+            }
+        }
+    }
+
+    public String getlastTimes(User user) {
+    
+        try {            
+            String query = "SELECT lasttimes FROM users WHERE username = ? ";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user.getUsername());            
+            rs = ps.executeQuery();            
+            if (rs.next()) {
+                System.out.println("Getting lastimes...");
+                System.out.println("Lastimes retrieved");
+                    return rs.getString("lasttimes");
+                
+            }
+            
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        } /*finally {
+            try {
+                conn.close();
+            } catch (SQLException ex2SQL) {
+                System.err.println(ex2SQL);
+            }
+        }*/
+        return null;
+    }
+
+
+
+
 }
+
+
+

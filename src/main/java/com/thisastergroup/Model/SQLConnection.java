@@ -1,4 +1,4 @@
-package com.thisastergroup.model;
+package com.thisastergroup.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 //Basic SQL connection class to connect to the database
 
 public class SQLConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/users";
+    private static final String URL = "jdbc:mysql://localhost:3306/main_schema";
     private static final String USER = "root";
     private static final String PASS = "KappaHetaProject$";
     private Connection conn = null;
@@ -20,15 +20,15 @@ public class SQLConnection {
      * @see Connection
      * 
      */
-    public Connection getConnection() {        
+    public Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = (Connection) DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException e) {
             System.err.println("Connection to database failed: " + e.getMessage());
-        }catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         return conn;
     }
 }
