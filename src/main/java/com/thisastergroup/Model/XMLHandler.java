@@ -10,6 +10,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import java.io.IOException;
+import java.util.Random;
 
 public class XMLHandler {
     /*
@@ -58,7 +59,8 @@ public class XMLHandler {
                         // Iterate through the category node to get the <question> node
                         // TODO change category.getLength() to a random number between 0 and
                         // category.getLength()
-                        for (int j = 0; j < category.getLength(); j++) {
+                        Random rand = new Random();
+                        for (int j = 0; j < rand.nextInt(category.getLength() - 1); j++) {
 
                             if (category.item(j).getNodeType() == Node.ELEMENT_NODE) {
 

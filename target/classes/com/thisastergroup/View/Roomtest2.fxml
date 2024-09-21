@@ -20,7 +20,7 @@
                </children>
             </AnchorPane>
             <ToggleButton fx:id="tbJournal" layoutX="439.0" layoutY="20.0" mnemonicParsing="false" onAction="#OpenJournal" prefHeight="48.0" prefWidth="47.0" style="-fx-background-color: #d9c2ba;" styleClass="journalbutton" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0" />
-            <ToggleButton fx:id="tbDump" disable="true" layoutX="24.0" layoutY="20.0" mnemonicParsing="false" onAction="#ToggleDump" opacity="0.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="20.0" />
+            
          </children>
       </AnchorPane>
    </center>

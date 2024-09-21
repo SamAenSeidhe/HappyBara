@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.time.LocalDateTime;
@@ -39,8 +40,6 @@ public class CtrlRoom {
     @FXML
     private ToggleButton tbJournal;
     @FXML
-    private ToggleButton tbDump;
-    @FXML
     private HBox hbIndicators;
     @FXML
     private AnchorPane apButtons;
@@ -53,6 +52,7 @@ public class CtrlRoom {
     private Image chiguiFrame = new Image("file:src/main/resources/Idle.gif");
 
     private User user = CtrlLogin.getUser();
+    private Interaction interaction;
 
     private XMLHandler xmlHandler = new XMLHandler();
 
@@ -154,8 +154,6 @@ public class CtrlRoom {
         Parent root;
         Scene scene;
         if (tbJournal.isSelected()) {
-            tbDump.setDisable(false);
-            tbDump.setOpacity(1);
 
             System.out.println("Journal is selected");
             root = FXMLLoader.load(getClass().getResource("..//view//Journal.fxml"));
@@ -166,25 +164,6 @@ public class CtrlRoom {
             user.setLastTimes(Stringfechas());
             sql.updateLastTimes(user);
 
-        } else {
-            tbDump.setDisable(true);
-            tbDump.setOpacity(0);
-
-        }
-    }
-
-    /**
-     * Toggles the dump lines within the journal entries
-     * 
-     * Shows or hides the dump lines within the journal entries based on the
-     * user selection of the dump toggler and the type of entry of the journal
-     * 
-     */
-    public void ToggleDump() {
-        if (tbDump.isSelected()) {
-            System.out.println("Dump is selected");
-        } else {
-            System.out.println("Dump is not selected");
         }
     }
 
@@ -309,6 +288,7 @@ public class CtrlRoom {
         LocalDateTime now = LocalDateTime.now();
         lasTimefeed = now;
         System.out.println("Feeding");
+        interaction = xmlHandler.getRandomEat();
     }
 
     public void clean() {
@@ -317,6 +297,7 @@ public class CtrlRoom {
         lasTimeclean = now;
 
         System.out.println("Cleaning");
+        interaction = xmlHandler.getRandomHygene();
     }
 
     public void sleep() {
@@ -326,6 +307,15 @@ public class CtrlRoom {
         lasTimesleep = now;
 
         System.out.println("Sleeping");
+        interaction = xmlHandler.getRandomHygene();
+        showActivity();
+    }
+
+    public void showActivity() {
+        // VBox vbActivity = new VBox();
+        System.out.println(interaction.getQuestion());
+        System.out.println(interaction.getTip());
+
     }
 
     public void colorChange(long seconds, Button button) {

@@ -12,7 +12,7 @@
       <AnchorPane fx:id="apButtons" maxWidth="1.7976931348623157E308" prefHeight="646.0" prefWidth="502.0" style="-fx-background-color: transparent;">
          <children>
             <ToggleButton fx:id="tbJournal" mnemonicParsing="false" onAction="#OpenJournal" prefHeight="26.0" prefWidth="27.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-            <ToggleButton fx:id="tbDump" disable="true" mnemonicParsing="false" onAction="#ToggleDump" opacity="0.0" prefHeight="26.0" prefWidth="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+            <ToggleButton fx:id="tbDump" disable="true" mnemonicParsing="false" opacity="0.0" prefHeight="26.0" prefWidth="26.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
             <Button fx:id="btnSleep" alignment="CENTER" disable="true" layoutX="228.0" layoutY="470.4" mnemonicParsing="false" onAction="#sleep" opacity="0.55" prefHeight="40.0" prefWidth="42.0" text="." AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="470.0" />
             <Button fx:id="btnFood" disable="true" layoutX="296.0" layoutY="460.0" mnemonicParsing="false" onAction="#feed" opacity="0.55" prefHeight="40.0" prefWidth="40.0" text="." AnchorPane.bottomAnchor="32.799999999999955" AnchorPane.rightAnchor="164.8" />
             <Button fx:id="btnHygiene" disable="true" layoutX="161.0" layoutY="462.0" mnemonicParsing="false" onAction="#clean" opacity="0.55" prefHeight="40.0" prefWidth="40.0" text="." AnchorPane.bottomAnchor="30.799999999999955" AnchorPane.leftAnchor="161.0" />
