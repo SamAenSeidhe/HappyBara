@@ -1,0 +1,14 @@
+com\thisastergroup\controller\CtrlRoom$2.class
+com\thisastergroup\Model\User.class
+com\thisastergroup\controller\CtrlLogin.class
+com\thisastergroup\controller\CtrlShop.class
+com\thisastergroup\Model\SQLUserMethods.class
+com\thisastergroup\controller\CtrlRoom$3.class
+com\thisastergroup\Model\SQLItemMethods.class
+com\thisastergroup\Model\SQLJournalMethods.class
+com\thisastergroup\controller\CtrlRoom$1.class
+com\thisastergroup\controller\CtrlSignUp.class
+com\thisastergroup\Model\Item.class
+com\thisastergroup\controller\App.class
+com\thisastergroup\Model\SQLConnection.class
+com\thisastergroup\Model\JournalEntry.class

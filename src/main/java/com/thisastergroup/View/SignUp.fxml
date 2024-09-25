@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" styleClass="gardenbg" stylesheets="@RoomStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlSignUp">
+   <children>
+      <FlowPane fx:id="fpRegistration" alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="630.0" prefWidth="361.0" style="-fx-background-color: #D38FA1; -fx-background-radius: 20px;">
+         <children>
+            <Label fx:id="msgSignUp" alignment="CENTER" contentDisplay="CENTER" text="Sign Up">
+               <FlowPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+               <font>
+                  <Font name="Gabriola" size="56.0" />
+               </font>
+            </Label>
+            <Label fx:id="greetingMsg" alignment="CENTER" contentDisplay="CENTER" prefWidth="306.0" text="A new friend awaits you!" wrapText="true">
+               <FlowPane.margin>
+                  <Insets bottom="10.0" />
+               </FlowPane.margin>
+               <font>
+                  <Font name="Gabriola" size="24.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="306.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Username" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtfUsername" promptText="AwesomeScott7x">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Email" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtfEmail" promptText="user@email.com">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Password">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtfPassword" promptText="!@#$%^&amp;*">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Age" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="cbAge" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Gender" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbGender" prefWidth="150.0" visibleRowCount="4">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Country" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtfCountry" promptText="Canada">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#SignUp" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #213246; -fx-background-radius: 20px;" text="Sign Up" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Hyperlink onAction="#toLogin" text="I already have an account" textAlignment="CENTER" textFill="#212140" underline="true">
+                     <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Hyperlink>
+               </children>
+            </HBox>
+         </children>
+      </FlowPane>
+   </children>
+</FlowPane>

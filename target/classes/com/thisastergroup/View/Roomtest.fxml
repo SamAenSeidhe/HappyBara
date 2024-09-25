@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0" styleClass="bodybg" stylesheets="@RoomStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlRoom">
+   <children>
+      <VBox fx:id="Structure" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0">
+         <children>
+            <HBox fx:id="JournalSec" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="118.0" prefWidth="480.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ToggleButton fx:id="tbJournal" mnemonicParsing="false" onAction="#OpenJournal" prefHeight="59.0" prefWidth="59.0" style="-fx-background-color: #d9c2ba;" styleClass="journalbutton" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="CenterSec" alignment="CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="Left_Arrow" mnemonicParsing="false" onAction="#ChangeClothingBackwards" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: transparent;" styleClass="leftarrow" />
+                  <HBox prefHeight="100.0" prefWidth="156.0">
+                     <children>
+                        <StackPane fx:id="stack" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="272.0" prefWidth="202.0">
+                           <children>
+                              <ImageView fx:id="imgChiguiro" fitHeight="205.0" fitWidth="229.0" onMouseClicked="#Customization" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                                 <image>
+                                    <Image url="@../../../../../../../../HappyBara/src/main/resources/Idle.gif" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="currentItem" fitHeight="272.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+                  <Button fx:id="Right_Arrow" mnemonicParsing="false" onAction="#ChangeClothingForwards" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: transparent;" styleClass="rightarrow" />
+               </children>
+            </HBox>
+            <HBox fx:id="BottomSec" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="apButtons" prefHeight="235.0" prefWidth="219.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Button fx:id="btnSleep" disable="true" layoutX="78.0" layoutY="23.0" mnemonicParsing="false" onAction="#sleep" opacity="0.55" prefHeight="59.0" prefWidth="59.0" styleClass="sleepbutton" text="." AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="77.0" AnchorPane.topAnchor="23.0" />
+                        <Button fx:id="btnFood" disable="true" mnemonicParsing="false" onAction="#feed" opacity="0.55" prefHeight="59.0" prefWidth="59.0" styleClass="feedbutton" text="." AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                        <Button fx:id="btnHygiene" disable="true" mnemonicParsing="false" onAction="#clean" opacity="0.55" prefHeight="59.0" prefWidth="59.0" styleClass="cleanbutton" text="." AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+                        <ImageView fx:id="imgIndicator" fitHeight="50.0" fitWidth="50.0" layoutX="85.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="105.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

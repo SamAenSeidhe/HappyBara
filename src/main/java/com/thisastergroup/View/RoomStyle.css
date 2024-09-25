@@ -1,0 +1,106 @@
+.bodybg {
+    -fx-background-image: url("file:src/main/resources/Room.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.gardenbg {
+    -fx-background-image: url("file:src/main/resources/garden.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.sleepbutton {
+    -fx-background-image: url("file:src/main/resources/Bed-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.feedbutton {
+    -fx-background-image: url("file:src/main/resources/Feed-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.cleanbutton {
+    -fx-background-image: url("file:src/main/resources/Shower-Icon.png");
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
+.journalbutton {
+    -fx-shape: "M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0";
+    -fx-background-color: #D9C198;
+    -fx-background-image: url("file:src/main/resources/Journal-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.statusbutton {
+    -fx-shape: "M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0";
+    -fx-background-image: url("file:src/main/resources/Status-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.journalbutton:hover {
+    -fx-background-color: #d6b171;
+}
+.rightarrow {
+    -fx-background-image: url("file:src/main/resources/Arrow-Icon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+}
+.leftarrow {
+    -fx-background-image: url("file:src/main/resources/Arrow-Icon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-scale-x: -1;
+}
+.button:hover{
+    -fx-background-color: #6552b9;
+}
+
+.shop-toggle-button{
+    -fx-background-color: #68A48C;
+    -fx-background-image: url("file:src/main/resources/Shop-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.shop-toggle-button:hover{
+    -fx-background-color: #3ba57a;
+}
+.background-toggle-button{
+    -fx-background-color: #68A48C;
+    -fx-background-image: url("file:src/main/resources/Backgrounds-Icon.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+.background-toggle-button:hover{
+    -fx-background-color: #3ba57a;
+}
+
+.activity-box {
+    -fx-background-color: #585858bb;
+    -fx-border-color: #16007a;    
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+.activity-label {
+    -fx-font-size: 20;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Gabriola";
+    -fx-graphic-text-gap: 2;
+    -fx-line-spacing: -18;
+}
+
+.activity-send-button {
+    -fx-background-color: #684ce9;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-font-family: "Gabriola";
+}
+
+.activity-close-button {
+    -fx-background-color: #684ce9;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-font-family: "Gabriola";
+}

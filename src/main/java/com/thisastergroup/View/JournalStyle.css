@@ -1,0 +1,74 @@
+.button {
+    -fx-background-color: #797D81;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: #94A89A;
+}
+
+.toggle-button {
+    -fx-background-color: #797D81;
+    -fx-background-radius: 10;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #94A89A;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #494b4d;
+    -fx-shadow-highlight-color: #94A89A;
+}
+
+.txtEntry {
+    -fx-font-size: 20px;
+    -fx-font-family: "Rows of Sunflowers";
+    -fx-fill: rgb(0, 0, 0);
+
+}
+
+.txtEntry:hover {
+    /*-fx-font-size: 25px;*/
+    -fx-fill: #3f55d1;
+    -fx-underline: true;
+
+}
+
+.txtEntry-dump {
+    -fx-font-size: 20px;
+    -fx-font-family: "Rows of Sunflowers";
+    -fx-fill: #000000;
+
+}
+
+.txtEntry-dump:hover {
+    /*-fx-font-size: 25px;*/
+    -fx-fill: #8c9bec;
+    -fx-underline: true;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-Date {
+    -fx-font-size: 50px;
+    -fx-font-family: "Gabriola";
+    -fx-text-alignment: center;
+    -fx-fill: #000000;
+}
+
+.pane-entries {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;    
+}
+
+.scene-pane {
+    -fx-background-color: #ffffff;
+    
+}

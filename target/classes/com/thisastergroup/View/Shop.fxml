@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: gray;" styleClass="bodybg" stylesheets="@RoomStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thisastergroup.controller.CtrlShop">
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true" styleClass="ImageView" />
+      <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="300.0" stylesheets="@Shop.css">
+         <content>
+            <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="509.0" prefWidth="334.0" styleClass="flowpane">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#toRoom" prefWidth="250.0" styleClass="title-label" text="Item Shop" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Bell MT" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="room" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toRoom" prefHeight="30.0" prefWidth="30.0" styleClass="button-shopcart" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                           <graphic>
+                              <ImageView fx:id="imageicon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="cleanbutton">
+                                 <image>
+                                    <Image url="@../../../../resources/Icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label fx:id="coins_label" layoutX="6.0" layoutY="10.0" text="\$0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorpane8" styleClass="intro-banner-card">
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                     <children>
+                        <ImageView fx:id="image8" fitHeight="90.0" fitWidth="82.0" layoutX="98.4" layoutY="-1.6" onMouseClicked="#buyItem8" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="-2.0" />
+                        <Label fx:id="labelitem8" layoutX="222.0" layoutY="62.0" text="20" AnchorPane.bottomAnchor="5.200000000000003" AnchorPane.rightAnchor="53.20000000000002" />
+                        <Label style="-fx-rotate: -10;" text="50% off" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font name="Alef Regular" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Separator maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="260.0">
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Separator>
+                  <AnchorPane fx:id="anchorpane1" styleClass="item-card">
+                     <children>
+                        <ImageView fx:id="image1" fitHeight="70.0" fitWidth="70.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#buyItem1" pickOnBounds="true" preserveRatio="true" styleClass="cleanbutton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="5.0" />
+                        <Label fx:id="labelitem1" text="7" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorpane2" styleClass="item-card">
+                     <children>
+                        <ImageView fx:id="image2" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#buyItem2" pickOnBounds="true" preserveRatio="true" styleClass="cleanbutton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                        <Label fx:id="labelitem2" text="80" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorpane3" styleClass="item-card">
+                     <children>
+                        <ImageView fx:id="image3" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#buyItem3" pickOnBounds="true" preserveRatio="true" styleClass="cleanbutton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                        <Label fx:id="labelitem3" text="50" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+                  <Separator maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="260.0" style="-fx-background-radius: 5;">
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Separator>
+                  <AnchorPane fx:id="anchorpane4" styleClass="item-card">
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                     <children>
+                        <ImageView fx:id="image4" fitHeight="70.0" fitWidth="70.0" layoutX="5.0" onMouseClicked="#buyItem4" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.799999999999997" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="labelitem4" text="25" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorpane5" prefWidth="182.0" styleClass="promo-card">
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                     <children>
+                        <ImageView fx:id="image5" fitHeight="125.0" fitWidth="74.0" layoutX="50.0" layoutY="-17.6" onMouseClicked="#buyItem5" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="-18.0" />
+                        <Label fx:id="labelitem5" layoutX="134.0" layoutY="57.0" text="50" AnchorPane.bottomAnchor="5.400000000000006" AnchorPane.rightAnchor="20.400000000000006" />
+                     </children>
+                  </AnchorPane>
+                  <Separator maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="260.0">
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Separator>
+                  <AnchorPane fx:id="anchorpane6" styleClass="item-card">
+                     <children>
+                        <ImageView fx:id="image6" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#buyItem6" pickOnBounds="true" preserveRatio="true" styleClass="cleanbutton" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                        <Label fx:id="labelitem6" text="5" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorpane7" styleClass="promo-card">
+                     <children>
+                        <ImageView fx:id="image7" fitHeight="114.0" fitWidth="69.0" layoutX="46.4" layoutY="-16.8" onMouseClicked="#buyItem7" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-16.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="-17.0" />
+                        <Label fx:id="labelitem7" layoutX="138.0" layoutY="57.0" text="100" AnchorPane.bottomAnchor="5.400000000000006" AnchorPane.rightAnchor="22.80000000000001" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="prueba" mnemonicParsing="false" onAction="#prueba" text="Button" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </children>
+</StackPane>
